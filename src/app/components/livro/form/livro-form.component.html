@@ -1,0 +1,42 @@
+<p>
+  TELA DE CADASTRO
+</p>
+
+<div align="center">
+  <div class="col-md-3">
+
+    <!-- Ng model para pega e setar os valores digitados no input  -->
+    <!-- [Property binding - GET] & (Event binding - SET) -->
+
+    <div class="form-group">
+      <label for="exampleInputEmail1">Titulo</label>
+      <input type="text" class="form-control" [(ngModel)]="livro.titulo" 
+      aria-describedby="emailHelp" placeholder="Digite o titulo">
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputEmail1">Data de publicacao (dd/MM/yyyy)</label>
+      <input type="text" class="form-control" [(ngModel)]="livro.dataDePublicacao" 
+      aria-describedby="emailHelp" placeholder="Digite a data de publicacao">
+    </div>
+
+    <div class="form-group">
+      <label>Autores: </label>
+      <select [(ngModel)]="livro.autorDTO.id">
+        <option value="undefined">Selecione</option>
+        <option *ngFor="let autor of autores" value="{{autor.id}}">{{autor.nome}}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+        <label>Categorias: </label>
+        <select [(ngModel)]="livro.categoriaDTO.id">
+          <option value="undefined">Selecione</option>
+          <option *ngFor="let categoria of categorias" value={{categoria.id}}>{{categoria.descricao}}</option>
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-outline-primary" (click)="cadastrar()">CADASTRAR</button>
+
+  </div>
+</div>

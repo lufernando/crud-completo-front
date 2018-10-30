@@ -1,0 +1,12 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+
+  <nav class="navbar navbar-dark bg-dark">
+    <button class="btn btn-primary btn-lg active" [routerLink]="[ '/livro/cadastro' ]">Cadastrar</button>
+    <button class="btn btn-primary btn-lg active" [routerLink]="[ '/livro' ]">Listar</button>
+  </nav>
+
+  <router-outlet></router-outlet>
